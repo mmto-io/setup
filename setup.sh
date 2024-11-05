@@ -2,10 +2,6 @@
 
 echo "Starting setup..."
 
-# Update macOS and install Xcode Command Line Tools
-echo "Installing Xcode Command Line Tools..."
-xcode-select --install
-
 # Install Homebrew
 echo "Installing Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -25,18 +21,19 @@ brew install --cask google-chrome
 brew install --cask cursor
 brew install --cask iterm2
 
-# Install Oh My Zsh
-echo "Installing Oh My Zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &
-
-# Wait for Oh My Zsh installation to complete
-wait
-
 # Set up Python environment
 echo "Setting up Python environment..."
 pip3 install --upgrade pip
 pip3 install virtualenv
 pip3 install numpy pandas matplotlib
+
+#install Xcode Command Line Tools
+echo "Installing Xcode Command Line Tools..."
+xcode-select --install
+
+# Install Oh My Zsh
+echo "Installing Oh My Zsh..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Completion message
 echo "Environment setup complete!"

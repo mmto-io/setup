@@ -75,6 +75,12 @@ brew install --cask \
 # Python setup
 log "Setting up Python environment..."
 echo 'alias python=python3' >> ~/.zprofile
+
+# Create and activate a virtual environment for global packages
+python3 -m venv ~/.global-python
+source ~/.global-python/bin/activate
+
+# Now install packages in the virtual environment
 pip3 install --upgrade pip
 pip3 install \
     virtualenv \
@@ -86,6 +92,9 @@ pip3 install \
     black \
     pylint \
     jupyter
+
+# Add the virtual environment's bin to PATH
+echo 'export PATH="$HOME/.global-python/bin:$PATH"' >> ~/.zprofile
 
 # Node.js setup
 log "Setting up Node environment..."

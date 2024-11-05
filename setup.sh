@@ -19,12 +19,11 @@ brew install python
 echo 'alias python=python3' >> ~/.zprofile  # Make Python3 the default
 brew install git
 brew install wget
-
-
-# Install productivity tools
+brew install git
 brew install --cask google-chrome
 brew install --cask cursor
 brew install --cask iTerm2
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Set up Python environment
 echo 'Setting up Python environment...'

@@ -3,7 +3,7 @@
 echo "Starting setup..."
 
 # Update macOS and install Xcode Command Line Tools
-echo "Updating macOS and installing Xcode Command Line Tools..."
+echo "Installing Xcode Command Line Tools..."
 xcode-select --install
 
 # Install Homebrew
@@ -27,7 +27,10 @@ brew install --cask iterm2
 
 # Install Oh My Zsh
 echo "Installing Oh My Zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &
+
+# Wait for Oh My Zsh installation to complete
+wait
 
 # Set up Python environment
 echo "Setting up Python environment..."
